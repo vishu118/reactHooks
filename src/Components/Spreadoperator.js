@@ -7,6 +7,8 @@ const Spreadoperator = () => {
 
     const handleClick = ()=>{
         setobj({...obj,  myName:"Kailash"})
+
+        obj.myName == "Kailash"? setobj({...obj,  myName:"Vishal"}) : setobj({...obj,  myName:"Kailash"})
     }
   return (
     <div>
