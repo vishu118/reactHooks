@@ -20,12 +20,14 @@ setcount(count-1)
     setval('Name Changed')
     let name = val;
 
-    if(name === "click to change"){
-      setval('Name Changed')
-    }
-    else{
-      setval('click to change')
-    }
+    // if(name === "click to change"){
+    //   setval('Name Changed')
+    // }
+    // else{
+    //   setval('click to change')
+    // }
+
+    name === "click to change" ? setval('Name Changed') : setval('click to change')
   }
   
  
