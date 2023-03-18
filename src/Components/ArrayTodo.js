@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../ArrayTodo.css";
+import "./CSS/ArrayTodo.css";
 
 const ArrayTodo = () => {
   let arr = [
