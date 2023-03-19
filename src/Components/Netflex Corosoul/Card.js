@@ -39,10 +39,12 @@ const Wrapper = styled.section`
     align-items: center;
     justify-content:center;
     text-align: center;
+    height:auto;
   }
   .wrapper {
     width: 100%;
     height: 100%;
+   
   }
   .banner-image {
     height:auto;
