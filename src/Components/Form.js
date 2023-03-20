@@ -47,8 +47,8 @@ const Form = () => {
           allEntry.map((ele) => {
             return (
               <div>
-                <p>{ele.Email}</p>
-                <p>{ele.Password}</p>
+                <p>Email : {ele.Email}</p>
+                <p>Password : {ele.Password}</p>
               </div>
             );
           })
