@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./CSS/Form.css";
 
+
 const Form = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
@@ -35,6 +36,7 @@ const Form = () => {
           value={Password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
         <button type="submit" className="btn" onClick={handleSubmit}>
           Submit
         </button>
