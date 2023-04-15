@@ -1,10 +1,10 @@
 import React from 'react'
-import Dummy from "./Data.json"
-import { useState } from 'react'
 
 
-const TableBody = () => {
-    const [ Data ,setData] = useState(Dummy)
+
+
+const TableBody = ({Data,setData}) => {
+   
   return (
     <div>
         <table>
@@ -18,9 +18,9 @@ const TableBody = () => {
                 </tr>
             </thead>
             <tbody>
-              {Data.map((ele,index)=>{
+              {Data.map((ele)=>{
                 return(
-                    <tr key = {index}>
+                    <tr key = {ele.id}>
                     <td>{ele.id}</td>
                     <td>{ele.name}</td>
                     <td>{ele.email}</td>

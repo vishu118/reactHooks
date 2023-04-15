@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({handleChange,handleAddInput,NewContact}) => {
   return (
     <>
       <div className="head">
@@ -15,13 +15,13 @@ const Header = () => {
         </div>
       </div>
 
-      <form action="" className="input">
-        <input type="text" name="id" placeholder="Enter id" />
-        <input type="text" name="name" placeholder="Enter Name" />
-        <input type="email" name="email" placeholder="Enter your Email" />
-        <input type="text" name="phone" placeholder="Enter Your Phone" />
+      <form action="" className="input" onSubmit={handleAddInput}>
+        <input type="text" name="id" placeholder="Enter id" onChange = {handleChange} value ={NewContact.id}/>
+        <input type="text" name="name" placeholder="Enter Name" onChange = {handleChange} value ={NewContact.name}/>
+        <input type="email" name="email" placeholder="Enter your Email" onChange = {handleChange} value ={NewContact.email} />
+        <input type="text" name="phone" placeholder="Enter Your Phone" onChange = {handleChange} value ={NewContact.phone}/>
 
-        <button className="btn" type="submit">
+        <button className="btn" type="submit" >
           Add
         </button>
       </form>
