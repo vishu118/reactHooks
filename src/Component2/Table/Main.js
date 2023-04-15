@@ -17,6 +17,8 @@ const Main = () => {
 
     })
 
+  
+
 const handleSearch = (e)=>{
     const matchedContact = Dummy.filter((Data) => {
         return Data.name.toLowerCase().includes(e.target.value.toLowerCase());
@@ -63,7 +65,7 @@ const handleAddInput = (e)=>{
   return (
     <div className='container'>
         <Header  handleChange = {handleChange} handleAddInput = {handleAddInput} NewContact={NewContact} handleSearch = {handleSearch}/>
-        <TableBody Data = {Data} setData = {setData} />
+        <TableBody Data = {Data} setData = {setData}  />
     </div>
   )
 }
