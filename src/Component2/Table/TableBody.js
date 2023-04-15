@@ -15,8 +15,8 @@ const TableBody = ({Data,setData}) => {
         setData(deleteContact)
       }  
 
-    const handleSort = ()=>{
-        console.log('hi')
+    const handleSortId = ()=>{
+     
        setSort({Sort : "id" , reversed : !Sort.reversed})
        const Copy = [...Data]
        Copy.sort((a,b)=>{
@@ -27,14 +27,26 @@ const TableBody = ({Data,setData}) => {
        })
        setData(Copy)
     }  
+    const handleSortbyName = ()=>{
+     
+       setSort({Sort : "name" , reversed : !Sort.reversed})
+       const Copy = [...Data]
+       Copy.sort((a,b)=>{
+        if (Sort.reversed){
+         return a.name.localeCompare(b.name)
+        }
+        return  b.name.localeCompare(a.name)
+       })
+       setData(Copy)
+    }  
 
   return (
     <div>
         <table>
             <thead>
                 <tr>
-                    <th onClick = {handleSort}>ID</th>
-                    <th>Name</th>
+                    <th onClick = {handleSortId}>ID</th>
+                    <th onClick ={handleSortbyName}>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Action</th>
