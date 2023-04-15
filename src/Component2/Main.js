@@ -6,7 +6,9 @@ import { useState } from "react";
 
 const Main = () => {
   const [search, setSearch] = useState("");
-  const [ Data ,setData] = useState(Dummy)
+  const [ Data ,setData] = useState(Dummy);
+  const [view, setView] = useState(false)
+  const [text, setText] = useState(false)
  
 
   return (
@@ -16,10 +18,18 @@ const Main = () => {
             setSearch={setSearch} 
             Data = {Data}
             setData ={setData}
+            view = {view}
+            setView = {setView}
+            text ={text}
+            setText = {setText}
 
 
             />
-      <div className="inner-container">
+
+{
+  view ? (
+    <div className="inner-container">
+      
         {Data.filter((ele) => ele.name.toLowerCase().includes(search)).map(
           (ele,index) => {
             return (
@@ -33,6 +43,25 @@ const Main = () => {
           }
         )}
       </div>
+  ) : (
+    <div className="inner-container">
+      
+      {Data.filter((ele) => ele.name.toLowerCase().includes(search)).map(
+        (ele,index) => {
+          return (
+            <div className="list-wrapper" key = {index}>
+              <div className="list-images">
+                <h2 className="list-img-title">{ele.name}</h2>
+                <img src={ele.url} alt="notFound" />
+              </div>
+            </div>
+          );
+        }
+      )}
+    </div>
+  )
+}
+    
     </div>
   );
 };

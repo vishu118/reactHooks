@@ -2,8 +2,14 @@ import React from 'react'
 import './Header.css'
 import { useState } from 'react';
 
-const Header = ({search,setSearch,Data,setData}) => {
+const Header = ({search,setSearch,Data,setData,view,setView,text,setText}) => {
+
+
     const [Sort, setSort] = useState({ sorted: "name", reversed: false });
+    
+
+
+   
     const handleSort = ()=>{
         setSort({Sort:'name' , reversed : !Sort.reversed})
         const copy = [...Data]
@@ -15,6 +21,12 @@ const Header = ({search,setSearch,Data,setData}) => {
         })
         setData(copy)
     }
+
+     const handleView = ()=>{
+        setText(!text)
+        setView(!view)
+     }
+
   return (
     <div className='header'>
     <div className="head">
@@ -29,7 +41,7 @@ const Header = ({search,setSearch,Data,setData}) => {
         </div>
         <div className="Button">
             <button className='btn' onClick = {handleSort} >Sort</button>
-            <button className='btn' >View</button>
+            <button className='btn' onClick = {handleView}>{text?"List":"Grid"}</button>
         </div>
 
     </div>
