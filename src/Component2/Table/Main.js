@@ -8,6 +8,7 @@ import { useState } from 'react'
 
 const Main = () => {
     const [ Data ,setData] = useState(Dummy)
+    const [ search , setSearch] = useState('')
     const [ NewContact , setNewContact] = useState({
         id : "",
         name : "",
@@ -15,6 +16,14 @@ const Main = () => {
         phone : "",
 
     })
+
+const handleSearch = (e)=>{
+    const matchedContact = Dummy.filter((Data) => {
+        return Data.name.toLowerCase().includes(e.target.value.toLowerCase());
+      });
+      setData(matchedContact);
+      setSearch(e.target.value);
+}
 
 const handleChange = (e)=>{
  const fieldName = e.target.getAttribute('name')
@@ -53,7 +62,7 @@ const handleAddInput = (e)=>{
 
   return (
     <div className='container'>
-        <Header  handleChange = {handleChange} handleAddInput = {handleAddInput} NewContact={NewContact}/>
+        <Header  handleChange = {handleChange} handleAddInput = {handleAddInput} NewContact={NewContact} handleSearch = {handleSearch}/>
         <TableBody Data = {Data} setData = {setData} />
     </div>
   )

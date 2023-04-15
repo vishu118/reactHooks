@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({handleChange,handleAddInput,NewContact}) => {
+const Header = ({handleChange,handleAddInput,NewContact,handleSearch}) => {
   return (
     <>
       <div className="head">
@@ -11,6 +11,7 @@ const Header = ({handleChange,handleAddInput,NewContact}) => {
             type="text"
             className="search-input"
             placeholder="Enter here to Search"
+            onChange = {handleSearch}
           />
         </div>
       </div>
