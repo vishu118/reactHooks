@@ -1,9 +1,11 @@
 import React from 'react'
+import { useState } from 'react'
 
 
 
 
 const TableBody = ({Data,setData}) => {
+    const [ Sort , setSort ] = useState({id : "id", reversed : false})
    
 
     const handleDelete = (id)=>{
@@ -13,12 +15,25 @@ const TableBody = ({Data,setData}) => {
         setData(deleteContact)
       }  
 
+    const handleSort = ()=>{
+        console.log('hi')
+       setSort({Sort : "id" , reversed : !Sort.reversed})
+       const Copy = [...Data]
+       Copy.sort((a,b)=>{
+        if (Sort.reversed){
+         return a.id - b.id
+        }
+        return b.id - a.id
+       })
+       setData(Copy)
+    }  
+
   return (
     <div>
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th onClick = {handleSort}>ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
